@@ -1,4 +1,4 @@
-namespace ToDoManager.Application.Concretes;
+namespace ToDoManager.Application.Abstracts;
 
 public interface IGenericRepository <T> where T: class
 {

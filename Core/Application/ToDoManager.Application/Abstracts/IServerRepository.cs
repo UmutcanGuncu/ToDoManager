@@ -1,6 +1,6 @@
 using ToDoManager.Domain.Entities;
 
-namespace ToDoManager.Application.Concretes;
+namespace ToDoManager.Application.Abstracts;
 
 public interface IServerRepository : IGenericRepository<Server>
 {

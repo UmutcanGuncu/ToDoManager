@@ -1,18 +1,40 @@
 ﻿<Properties StartupConfiguration="{47E9106F-7BF5-47D2-9170-5DBBD76CEAC0}|https">
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Presentation.ToDoManager.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation/ToDoManager.WebUI/Models/RegisterViewModel.cs">
+    <Files>
+      <File FileName="Core/Domain/ToDoManager.Domain/Entities/AppUser.cs" Line="10" Column="2" />
+      <File FileName="Presentation/ToDoManager.WebUI/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="Presentation/ToDoManager.WebUI/Controllers/AuthController.cs" Line="32" Column="10" />
+      <File FileName="Presentation/ToDoManager.WebUI/Models/LoginViewModel.cs" Line="10" Column="13" />
+      <File FileName="Presentation/ToDoManager.WebUI/Views/Auth/Login.cshtml" Line="17" Column="4" />
+      <File FileName="Presentation/ToDoManager.WebUI/Views/Shared/_Layout.cshtml" Line="11" Column="7" />
+      <File FileName="Presentation/ToDoManager.WebUI/Views/Auth/Register.cshtml" Line="1" Column="1" />
+      <File FileName="Presentation/ToDoManager.WebUI/Models/RegisterViewModel.cs" Line="17" Column="33" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ToDoManager" expanded="True" selected="True" />
+          <Node name="ToDoManager" expanded="True">
+            <Node name="Presentation" expanded="True">
+              <Node name="ToDoManager.WebUI">
+                <Node name="Controllers" expanded="True" />
+                <Node name="Models" expanded="True">
+                  <Node name="RegisterViewModel.cs" selected="True" />
+                </Node>
+                <Node name="Views" expanded="True">
+                  <Node name="Auth" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Presentation.ToDoManager.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
