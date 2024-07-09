@@ -24,4 +24,12 @@
       <ProjectReference Include="..\..\Domain\ToDoManager.Domain\ToDoManager.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Dtos\" />
+      <None Remove="Dtos\AuthDtos\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Dtos\" />
+      <Folder Include="Dtos\AuthDtos\" />
+    </ItemGroup>
 </Project>

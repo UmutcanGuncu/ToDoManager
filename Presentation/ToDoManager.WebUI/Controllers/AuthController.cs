@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -14,13 +16,11 @@ namespace ToDoManager.WebUI.Controllers
     public class AuthController : Controller
     {
 
-        private readonly UserManager<AppUser> _userManager;
-        private readonly SignInManager<AppUser> _signInManager;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public AuthController(IHttpClientFactory httpClientFactory)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
+            _httpClientFactory = httpClientFactory;
         }
 
         [HttpGet]
@@ -35,16 +35,18 @@ namespace ToDoManager.WebUI.Controllers
             {
                 return View();
             }
-            var user = await _userManager.FindByEmailAsync(model.Email);
-            if(user == null)
+            var client = _httpClientFactory.CreateClient();
+            var jsonData = JsonSerializer.Serialize(model);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var result = await client.PostAsync("https://localhost:7293/auth/login", stringContent);
+            if (result.IsSuccessStatusCode)
             {
-                return View();
-            }
-            var result = await _signInManager.PasswordSignInAsync(user, model.Password,true,true);
-            if (result.Succeeded)
                 return Redirect("/Home/Index");
-            else
-                return View();
+                // e posta ve şifre yanlışsa api'dan gelen mesaja göre hata gösterimi yap
+                // kullanıcı bilgilerini cookie ye kaydetmeyi ve ön yüzde de buradaki bilgileri kullanmamızı sağlamalıyız
+               
+            }
+            return View();
         }
         [HttpGet]
         public IActionResult Register()
@@ -58,17 +60,15 @@ namespace ToDoManager.WebUI.Controllers
             {
                 return View();
             }
-            var value = await _userManager.CreateAsync(new AppUser()
+            var client = _httpClientFactory.CreateClient();
+            var jsonData = JsonSerializer.Serialize(model);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var result = await client.PostAsync("https://localhost:7293/auth/register", stringContent);
+            if (result.IsSuccessStatusCode)
             {
-                Name = model.Name,
-                Surname = model.Surname,
-                UserName = model.Email,
-                Email = model.Email,
-                PhoneNumber = model.Phone
-            },model.Password);
-            if (value.Succeeded)
-            {
-                return Redirect("/Home/Index");
+                return Redirect("/Auth/Login");
+                
+                // kullanıcı kayıt olamadıysa api'dan gelecek olan 401 koduna göre mesaj göster
             }
             return View();
         }
