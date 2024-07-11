@@ -27,17 +27,20 @@ builder.Services.AddIdentity<AppUser, AppRole>(options =>
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); // 4 başarısız girişte 5 dakika boyunca giriş yapamayacak kullanıcı
     options.Lockout.MaxFailedAccessAttempts = 4; //Başarısız giriş sayısı
 }).AddEntityFrameworkStores<ToDoManagerDbContext>();
-builder.Services.AddDbContext<ToDoManagerDbContext>(opt =>
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+builder.Services.AddDbContext<ToDoManagerDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"),
+                      b => b.MigrationsAssembly("ToDoManager.WebAPI"))
 );
+
 builder.Services.AddControllers(options => options.Filters.Add(typeof(ExceptionFilter)));
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericService<>));
 builder.Services.AddScoped<ILogRepository, LogService>();
 builder.Services.AddScoped<IServerRepository, ServerService>();
 builder.Services.AddScoped<ICheckpointRepository, CheckpointService>();
+builder.Services.AddScoped<ILogViewRepository, LogViewService>();
 builder.Services.AddCors(opt =>
 opt.AddPolicy("UIClients", builder =>
-    builder.WithOrigins("").AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader()));
+    builder.WithOrigins("https://localhost:7032", "http://localhost:5123").AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader()));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

@@ -8,5 +8,6 @@ public class LogService : GenericService<Log>, ILogRepository
 {
     public LogService(ToDoManagerDbContext context) : base(context)
     {
+        
     }
 }

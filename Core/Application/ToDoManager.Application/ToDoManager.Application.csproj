@@ -27,9 +27,10 @@
     <ItemGroup>
       <None Remove="Dtos\" />
       <None Remove="Dtos\AuthDtos\" />
+      <None Remove="Dtos\LogViewDtos\" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Dtos\" />
       <Folder Include="Dtos\AuthDtos\" />
+      <Folder Include="Dtos\LogViewDtos\" />
     </ItemGroup>
 </Project>

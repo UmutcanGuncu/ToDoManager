@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ToDoManager.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bba04ab5d2d0961c8d5a03e1c4c2a4adbeb68d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91b0800ea2ece3a64f2ddccac52eee4fc3140222")]
 [assembly: System.Reflection.AssemblyProductAttribute("ToDoManager.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ToDoManager.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
