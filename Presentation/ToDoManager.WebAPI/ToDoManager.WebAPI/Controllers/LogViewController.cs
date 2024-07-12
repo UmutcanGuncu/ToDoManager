@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToDoManager.Application.Abstracts;
 
@@ -11,6 +12,7 @@ namespace ToDoManager.WebAPI.Controllers
 {
     [ApiController]
     [Route("logView")]
+    [Authorize(AuthenticationSchemes = "Admin")]
     public class LogViewController : Controller
     {
         private readonly ILogViewRepository _logViewRepository;

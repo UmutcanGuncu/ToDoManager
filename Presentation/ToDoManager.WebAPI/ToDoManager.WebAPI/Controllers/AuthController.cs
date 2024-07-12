@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using ToDoManager.Application.Abstracts;
 using ToDoManager.Application.Dtos.AuthDtos;
+using ToDoManager.Application.Dtos.JwtDtos;
 using ToDoManager.Domain.Entities;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -17,11 +19,13 @@ namespace ToDoManager.WebAPI.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly ITokenHandler _tokenHandler;
 
-        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenHandler tokenHandler)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _tokenHandler = tokenHandler;
         }
 
         [HttpPost("register")]
@@ -32,7 +36,8 @@ namespace ToDoManager.WebAPI.Controllers
                 Name = registerDto.Name,
                 Surname = registerDto.Surname,
                 Email = registerDto.Email,
-                PhoneNumber = registerDto.Phone
+                PhoneNumber = registerDto.Phone,
+                UserName = registerDto.Email
             }, registerDto.Password);
             if (value.Succeeded)
             {
@@ -48,10 +53,11 @@ namespace ToDoManager.WebAPI.Controllers
             {
                 return Unauthorized();
             }
-            var result = await _signInManager.PasswordSignInAsync(user, login.Password, true, true);
+            var result = await _signInManager.CheckPasswordSignInAsync(user, login.Password, true);
             if (result.Succeeded)
             {
-                return Ok();
+                Token token  = _tokenHandler.CreateAccessToken(50);
+                return Ok(token);
             }
             return Unauthorized();
         }

@@ -1,38 +1,30 @@
 ﻿<Properties StartupConfiguration="{8861F5E1-D36F-4934-BB07-03AD89A1D7AC}|https">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Presentation.ToDoManager.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Presentation.ToDoManager.WebAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Infastructure/ToDoManager.Persistence/Context/ToDoManagerDbContext.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Presentation.ToDoManager.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/Controllers/LogViewController.cs">
     <Files>
-      <File FileName="Presentation/ToDoManager.WebUI/Controllers/AuthController.cs" Line="47" Column="16" />
-      <File FileName="Presentation/ToDoManager.WebUI/Controllers/HomeController.cs" Line="1" Column="1" />
-      <File FileName="Core/Domain/ToDoManager.Domain/Entities/LogView.cs" Line="4" Column="1" />
-      <File FileName="Infastructure/ToDoManager.Persistence/Context/ToDoManagerDbContext.cs" Line="25" Column="6" />
+      <File FileName="Core/Application/ToDoManager.Application/Abstracts/ILogViewRepository.cs" />
+      <File FileName="Core/Application/ToDoManager.Application/Dtos/LogViewDtos/ResultLogViewDto.cs" />
+      <File FileName="Infastructure/ToDoManager.Persistence/Concretes/LogViewService.cs" />
+      <File FileName="Core/Domain/ToDoManager.Domain/Entities/LogView.cs" />
+      <File FileName="Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/Controllers/LogViewController.cs" Line="32" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ToDoManager" expanded="True">
-            <Node name="Core" expanded="True">
-              <Node name="ToDoManager.Application" expanded="True" />
-              <Node name="ToDoManager.Domain">
-                <Node name="Entities" expanded="True" />
-              </Node>
+            <Node name="Presentation" expanded="True">
+              <Node name="ToDoManager.WebUI" selected="True" />
             </Node>
-            <Node name="Infastructure" expanded="True">
-              <Node name="ToDoManager.Persistence">
-                <Node name="Context" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Presentation" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Presentation.ToDoManager.WebAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

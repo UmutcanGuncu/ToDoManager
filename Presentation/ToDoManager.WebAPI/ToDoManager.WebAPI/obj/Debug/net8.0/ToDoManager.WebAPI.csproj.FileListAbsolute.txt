@@ -48,3 +48,11 @@
 /Users/umutcanguncu/RiderProjects/ToDoManager/Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/bin/Debug/net8.0/ToDoManager.Domain.pdb
 /Users/umutcanguncu/RiderProjects/ToDoManager/Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/bin/Debug/net8.0/ToDoManager.Persistence.pdb
 /Users/umutcanguncu/RiderProjects/ToDoManager/Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/bin/Debug/net8.0/ToDoManager.Application.pdb
+/Users/umutcanguncu/RiderProjects/ToDoManager/Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/umutcanguncu/RiderProjects/ToDoManager/Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/umutcanguncu/RiderProjects/ToDoManager/Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/umutcanguncu/RiderProjects/ToDoManager/Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/umutcanguncu/RiderProjects/ToDoManager/Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/umutcanguncu/RiderProjects/ToDoManager/Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/umutcanguncu/RiderProjects/ToDoManager/Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/umutcanguncu/RiderProjects/ToDoManager/Presentation/ToDoManager.WebAPI/ToDoManager.WebAPI/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
